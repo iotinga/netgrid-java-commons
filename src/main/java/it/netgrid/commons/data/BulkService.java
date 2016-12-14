@@ -7,6 +7,8 @@ import java.util.Map;
 public interface BulkService<T extends CrudObject<ID>, ID> {
 	
 	public List<T> read(Map<String, Object> filter, Long pageSize, Long offset) throws SQLException, IllegalArgumentException;
+	public <D> List<D> read(DataAdapter<T, D> dataAdapter, Map<String, Object> filter, Long pageSize, Long offset) throws SQLException, IllegalArgumentException;
+	
 	public List<T> read(List<ID> ids) throws SQLException, IllegalArgumentException;
 	
 	public List<ID> create(List<T> objects) throws SQLException, IllegalArgumentException;
