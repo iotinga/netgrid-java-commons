@@ -1,17 +1,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>it.netgrid</groupId>
-	<artifactId>shared</artifactId>
+	<parent>
+		<groupId>it.netgrid</groupId>
+		<artifactId>shared</artifactId>
+		<version>0.0.3</version>
+	</parent>
+	<artifactId>commons</artifactId>
 	<version>0.0.3</version>
-	<packaging>pom</packaging>
-	<name>Netgrid's Java shared libraries</name>
-	<description>A collection of Java classes for software quality improvement</description>
-	<url>https://bitbucket.org/netgrid/bauer</url>
-	<scm>
-		<url>git@bitbucket.org:netgrid/java-commons.git</url>
-		<developerConnection>@netgrid</developerConnection>
-	</scm>
+	<name>Netgrid Java Commons</name>
 	<licenses>
 		<license>
 			<name>Apache License, Version 2.0</name>
@@ -20,49 +17,33 @@
 			<comments>A business-friendly OSS license</comments>
 		</license>
 	</licenses>
-
-	<organization>
-		<name>Netgrid</name>
-		<url>http://www.netgrid.it</url>
-	</organization>
-	<developers>
-		<developer>
-			<id>matteo_bissoli</id>
-			<name>Matteo Bissoli</name>
-			<email>matteo.bissoli@netgrid.it</email>
-			<url>http://www.netgrid.it/matteo</url>
-			<organization>Netgrid</organization>
-			<organizationUrl>http://www.netgrid.it</organizationUrl>
-			<roles>
-				<role>architect</role>
-				<role>developer</role>
-			</roles>
-			<timezone>Italy/Rome</timezone>
-			<properties>
-				<picUrl>http://www.netgrid.it/wp-content/uploads/2014/11/150624-091636-600x600.jpg</picUrl>
-			</properties>
-		</developer>
-	</developers>
-
 	<properties>
 		<version.java>1.8</version.java>
+		<version.junit>4.12</version.junit>
+		<version.codec>1.10</version.codec>
 	</properties>
 
-	<modules>
-		<module>commons</module>
-		<module>commons-ormlite</module>
-	</modules>
+	<dependencies>
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>${version.codec}</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${version.junit}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
 
 	<distributionManagement>
 		<snapshotRepository>
 			<id>ossrh</id>
 			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
 		</snapshotRepository>
-		<repository>
-			<id>ossrh</id>
-			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-		</repository>
 	</distributionManagement>
+
 	<build>
 		<resources>
 			<resource>
@@ -70,6 +51,17 @@
 			</resource>
 		</resources>
 		<plugins>
+			<plugin>
+				<groupId>org.sonatype.plugins</groupId>
+				<artifactId>nexus-staging-maven-plugin</artifactId>
+				<version>1.6.3</version>
+				<extensions>true</extensions>
+				<configuration>
+					<serverId>ossrh</serverId>
+					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+					<autoReleaseAfterClose>true</autoReleaseAfterClose>
+				</configuration>
+			</plugin>
 			<plugin>
 				<groupId>org.sonatype.plugins</groupId>
 				<artifactId>nexus-staging-maven-plugin</artifactId>
@@ -151,4 +143,32 @@
 			</plugin>
 		</plugins>
 	</build>
+	<url>https://bitbucket.org/netgrid/java-commons</url>
+	<description>A set of common utilities and interfaces for Java projects</description>
+	<organization>
+		<name>Netgrid</name>
+		<url>http://www.netgrid.it</url>
+	</organization>
+	<scm>
+		<url>git@bitbucket.org:netgrid/java-commons.git</url>
+		<developerConnection>@netgrid</developerConnection>
+	</scm>
+	<developers>
+		<developer>
+			<id>matteo_bissoli</id>
+			<name>Matteo Bissoli</name>
+			<email>matteo.bissoli@netgrid.it</email>
+			<url>http://www.netgrid.it/matteo</url>
+			<organization>Netgrid</organization>
+			<organizationUrl>http://www.netgrid.it</organizationUrl>
+			<roles>
+				<role>architect</role>
+				<role>developer</role>
+			</roles>
+			<timezone>Italy/Rome</timezone>
+			<properties>
+				<picUrl>http://www.netgrid.it/wp-content/uploads/2014/11/150624-091636-600x600.jpg</picUrl>
+			</properties>
+		</developer>
+	</developers>
 </project>
