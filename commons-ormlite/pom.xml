@@ -4,13 +4,13 @@
 	<parent>
 		<groupId>it.netgrid</groupId>
 		<artifactId>shared</artifactId>
-		<version>0.0.3</version>
+		<version>0.0.4</version>
 	</parent>
 	<artifactId>commons-ormlite</artifactId>
 	<properties>
-		<version.java>1.8</version.java>
-		<version.ormlite>4.48</version.ormlite>
-		<version.guice>3.0</version.guice>
+		<version.java>21</version.java>
+		<version.ormlite>6.1</version.ormlite>
+		<version.guice>7.0.0</version.guice>
 	</properties>
 
 	<licenses>
@@ -33,7 +33,7 @@
 		<dependency>
 			<groupId>it.netgrid</groupId>
 			<artifactId>commons</artifactId>
-			<version>0.0.3</version>
+			<version>0.0.4</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/com.google.inject/guice -->

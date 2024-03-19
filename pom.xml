@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>it.netgrid</groupId>
 	<artifactId>shared</artifactId>
-	<version>0.0.3</version>
+	<version>0.0.4</version>
 	<packaging>pom</packaging>
 	<name>Netgrid's Java shared libraries</name>
 	<description>A collection of Java classes for software quality improvement</description>

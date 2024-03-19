@@ -4,10 +4,10 @@
 	<parent>
 		<groupId>it.netgrid</groupId>
 		<artifactId>shared</artifactId>
-		<version>0.0.3</version>
+		<version>0.0.4</version>
 	</parent>
 	<artifactId>commons</artifactId>
-	<version>0.0.3</version>
+	<version>0.0.4</version>
 	<name>Netgrid Java Commons</name>
 	<licenses>
 		<license>
@@ -18,9 +18,9 @@
 		</license>
 	</licenses>
 	<properties>
-		<version.java>1.8</version.java>
-		<version.junit>4.12</version.junit>
-		<version.codec>1.10</version.codec>
+		<version.java>21</version.java>
+		<version.junit>5.10.2</version.junit>
+		<version.codec>1.16.1</version.codec>
 	</properties>
 
 	<dependencies>
@@ -29,12 +29,14 @@
 			<artifactId>commons-codec</artifactId>
 			<version>${version.codec}</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
 		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
 			<version>${version.junit}</version>
 			<scope>test</scope>
 		</dependency>
+
 	</dependencies>
 
 	<distributionManagement>
